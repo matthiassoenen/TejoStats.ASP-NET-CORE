@@ -1,0 +1,158 @@
+﻿
+@page
+@model TejoStatsCore.Pages.RoeselareModel
+@{
+    ViewData["Title"] = "Tejo Roeselare";
+}
+<head>
+    <style>
+        .table-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Drie kolommen van gelijke breedte */
+            gap: 20px; /* Ruimte tussen de tabellen */
+            margin-top: 20px;
+        }
+
+        .table-container {
+            border: 1px solid #ddd; /* Optionele rand voor de tabellen */
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        
+        .table th {
+            background-color: #D3D3D3;
+        }
+    </style>
+
+</head>
+
+<div class="text-center">
+    <h1 class="display-4">Tejo Roeselare</h1>
+    <p>Welkom op de pagina van Tejo Roeselare</p>
+    
+</div>
+
+<form method="get">
+    <div class="form-group">
+        <label for="startDate">Startdatum:</label>
+        <input type="date" id="startDate" name="startDateValue" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="endDate">Einddatum:</label>
+        <input type="date" id="endDate" name="endDateValue" class="form-control" required />
+    </div>
+  <button type="submit" class="btn btn-primary">Zoeken</button>
+</form>
+
+
+@if (Model.CountIntakes != null && Model.CountIntakeType != null && Model.CountGender != null)
+{
+    <h3>Resultaten</h3>
+    <div class="table-grid">
+        <div class="table-container">
+         <table class="table">
+                @if (Model.CountIntakes.Rows.Count > 0)
+                {
+                    <thead>
+                    <tr>
+                        @foreach (System.Data.DataColumn column in Model.CountIntakes.Columns)
+                        {
+                            <th>@column.ColumnName</th>
+                        }
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (System.Data.DataRow row in Model.CountIntakes.Rows)
+                    {
+                        <tr>
+                            @foreach (var item in row.ItemArray)
+                            {
+                                <td>@item</td>
+                            }
+                        </tr>
+                    }
+                    </tbody>
+                }
+                else
+                {
+                    <tr><td>Geen resultaten gevonden.</td></tr>
+                }
+            </table>
+        </div>
+
+        <div class="table-container">
+       <table class="table">
+                @if (Model.CountIntakeType.Rows.Count > 0)
+                {
+                    <thead>
+                    <tr>
+                        @foreach (System.Data.DataColumn column in Model.CountIntakeType.Columns)
+                        {
+                            <th>@column.ColumnName</th>
+                        }
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (System.Data.DataRow row in Model.CountIntakeType.Rows)
+                    {
+                        <tr>
+                            @foreach (var item in row.ItemArray)
+                            {
+                                <td>@item</td>
+                            }
+                        </tr>
+                    }
+                    </tbody>
+                }
+                else
+                {
+                    <tr><td>Geen resultaten gevonden.</td></tr>
+                }
+            </table>
+        </div>
+
+        <div class="table-container">
+          <table class="table">
+                @if (Model.CountGender.Rows.Count > 0)
+                {
+                    <thead>
+                    <tr>
+                        @foreach (System.Data.DataColumn column in Model.CountGender.Columns)
+                        {
+                            <th>@column.ColumnName</th>
+                        }
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (System.Data.DataRow row in Model.CountGender.Rows)
+                    {
+                        <tr>
+                            @foreach (var item in row.ItemArray)
+                            {
+                                <td>@item</td>
+                            }
+                        </tr>
+                    }
+                    </tbody>
+                }
+                else
+                {
+                    <tr><td>Geen resultaten gevonden.</td></tr>
+                }
+            </table>
+        </div>
+        </div>
+}

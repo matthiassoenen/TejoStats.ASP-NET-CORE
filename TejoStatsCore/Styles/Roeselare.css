@@ -1,0 +1,26 @@
+﻿.table-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Drie kolommen van gelijke breedte */
+    gap: 20px; /* Ruimte tussen de tabellen */
+    margin-top: 20px;
+}
+
+.table-container {
+    border: 1px solid #ddd; /* Optionele rand voor de tabellen */
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+    .table th { background-color: #f2f2f2; }
