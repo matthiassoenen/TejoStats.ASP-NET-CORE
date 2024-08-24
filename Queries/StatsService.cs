@@ -10,6 +10,18 @@ namespace Queries
         Task<DataTable> CountIntakesAsync(DateTime startDate, DateTime endDate, string huis);
         Task<DataTable> CountIntakeTypeAsync(DateTime startDate, DateTime endDate, string huis);
         Task<DataTable> CountGenderAsync(DateTime startDate, DateTime endDate, string huis);
+        Task<DataTable> CountAgeAsync(DateTime startDate, DateTime endDate, string huis);
+        Task<DataTable> CountCityAsync(DateTime startDate, DateTime endDate, string huis);
+        Task<DataTable> CountCountryAsync(DateTime startDate, DateTime endDate, string huis);
+        Task<DataTable> CountDoorverwijzerAsync(DateTime startDate, DateTime endDate, string huis);
+        Task<DataTable> CountDoorverwezenAsync(DateTime startDate, DateTime endDate, string huis);
+        Task<DataTable> CountProblemsAsync(DateTime startDate, DateTime endDate, string huis);
+        Task<DataTable> CountSchoolWerkAsync(DateTime startDate, DateTime endDate, string huis);
+        Task<DataTable> CountWoonAsync(DateTime startDate, DateTime endDate, string huis);
+        Task<DataTable> CountTherapeutAsync(DateTime startDate, DateTime endDate, string huis);
+        Task<DataTable> CountAanwezigAsync(DateTime startDate, DateTime endDate, string huis);
+        Task<DataTable> CountAfwezigAsync(DateTime startDate, DateTime endDate, string huis);
+        Task<DataTable> CountGemiddeldeAsync(DateTime startDate, DateTime endDate, string huis);
     }
 
     public class StatsService : IStatsService
@@ -34,6 +46,62 @@ namespace Queries
         public async Task<DataTable> CountGenderAsync(DateTime startDate, DateTime endDate, string huis)
         {
             return await GetDataTableFromStoredProcedureAsync("CountGender", startDate, endDate, huis);
+        }
+        public async Task<DataTable> CountAgeAsync(DateTime startDate, DateTime endDate, string huis)
+        {
+            return await GetDataTableFromStoredProcedureAsync("CountAge", startDate, endDate, huis);
+        }
+        public async Task<DataTable> CountCityAsync(DateTime startDate, DateTime endDate, string huis)
+        {
+            return await GetDataTableFromStoredProcedureAsync("CountCity", startDate, endDate, huis);
+        }
+
+        public async Task<DataTable> CountCountryAsync(DateTime startDate, DateTime endDate, string huis)
+        {
+            return await GetDataTableFromStoredProcedureAsync("CountCountry", startDate, endDate, huis);
+        }
+        public async Task<DataTable> CountDoorverwijzerAsync(DateTime startDate, DateTime endDate, string huis)
+        {
+            return await GetDataTableFromStoredProcedureAsync("CountDoorverwijzer", startDate, endDate, huis);
+        }
+        public async Task<DataTable> CountDoorverwezenAsync(DateTime startDate, DateTime endDate, string huis)
+        {
+            return await GetDataTableFromStoredProcedureAsync("CountDoorverwezen", startDate, endDate, huis);
+        }
+
+        public async Task<DataTable> CountProblemsAsync(DateTime startDate, DateTime endDate, string huis)
+        {
+            return await GetDataTableFromStoredProcedureAsync("CountProblems", startDate, endDate, huis);
+        }
+
+        public async Task<DataTable> CountSchoolWerkAsync(DateTime startDate, DateTime endDate, string huis)
+        {
+            return await GetDataTableFromStoredProcedureAsync("CountSchoolWerk", startDate, endDate, huis);
+        }
+
+        public async Task<DataTable> CountWoonAsync(DateTime startDate, DateTime endDate, string huis)
+        {
+            return await GetDataTableFromStoredProcedureAsync("CountWoon", startDate, endDate, huis);
+        }
+
+        public async Task<DataTable> CountTherapeutAsync(DateTime startDate, DateTime endDate, string huis)
+        {
+            return await GetDataTableFromStoredProcedureAsync("CountTherapeut", startDate, endDate, huis);
+        }
+
+        public async Task<DataTable> CountAanwezigAsync(DateTime startDate, DateTime endDate, string huis)
+        {
+            return await GetDataTableFromStoredProcedureAsync("AanwezigeSessies", startDate, endDate, huis);
+        }
+
+        public async Task<DataTable> CountAfwezigAsync(DateTime startDate, DateTime endDate, string huis)
+        {
+            return await GetDataTableFromStoredProcedureAsync("AfwezigeSessies", startDate, endDate, huis);
+        }
+
+        public async Task<DataTable> CountGemiddeldeAsync(DateTime startDate, DateTime endDate, string huis)
+        {
+            return await GetDataTableFromStoredProcedureAsync("CountGemiddeldeAfgesloten", startDate, endDate, huis);
         }
 
         private async Task<DataTable> GetDataTableFromStoredProcedureAsync(string storedProcedureName, DateTime startDate, DateTime endDate, string huis)
