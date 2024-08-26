@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TejoStatsCore.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Styles/Tejo.css">
+    <<link rel="stylesheet" href="~/Styles/Tejo.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 
@@ -42,6 +42,13 @@
                         <option value="/Izegem">Bekijk gegevens tussen 2 datums</option>
                         <option value="/PerJaar8870">Bekijk gegevens per kalenderjaar</option>
                         <option value="/Irregular8870">Controleer op onregelmatigheden</option>
+                        <!-- Voeg hier meer opties toe als je meer pagina's hebt -->
+                    </select>
+                </div><div class="dropdown">
+                    <label for="beide">Tejo Roeselare & Izegem:</label>
+                    <select id="BeideTejo" class="form-control" onchange="navigateToBeide()">
+                        <option value="">Selecteer een pagina</option>
+                        
                         <!-- Voeg hier meer opties toe als je meer pagina's hebt -->
                     </select>
                 </div>
@@ -116,6 +123,8 @@
             });
         });
     </script>
+
+
 
 
 @await RenderSectionAsync("Scripts", required: false)

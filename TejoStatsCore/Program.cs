@@ -9,7 +9,9 @@ builder.Services.AddTransient<IStatsService, StatsService>(provider =>
     new StatsService(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddTransient<IStatsYearService, StatsYearService>(provider =>
     new StatsYearService(builder.Configuration.GetConnectionString("DefaultConnection")));
-    ;
+builder.Services.AddTransient<IStatsCompareService, StatsCompareService>(provider =>
+            new StatsCompareService(builder.Configuration.GetConnectionString("DefaultConnection")));
+;
 
 var app = builder.Build();
 
