@@ -1,40 +1,39 @@
 ﻿@page
-@model TejoStatsCore.Pages.IzegemModel
+@model TejoStatsCore.Pages.PerJaar8870Model
 @{
     ViewData["Title"] = "Tejo Izegem";
 }
 
-
 <head>
     <link rel="stylesheet" href="~/Styles/Tejo.css">
-
 </head>
 
 <div class="text-center">
     <h1 class="display-4">Tejo Izegem</h1>
-    <p>Welkom op de pagina van Tejo Izegem</p>
+    <p>
+        Welkom op de pagina van Tejo Izegem, <br />
+        op deze pagina kan je gegevens opvragen per jaar
+    </p>
 
 </div>
 
+
+
+
 <form method="get">
     <div class="form-group-container">
+        <!-- Vervang het start- en einddatum veld door een enkel jaartal veld -->
         <div class="form-group">
-            <label for="startDate">Startdatum:</label>
-            <input type="date" id="startDate" name="startDateValue" class="form-control" required />
-        </div>
-        <div class="form-group">
-            <label for="endDate">Einddatum:</label>
-            <input type="date" id="endDate" name="endDateValue" class="form-control" required />
+            <label for="year">Jaar:</label>
+            <input type="number" id="year" name="year" class="form-control" required min="2023" />
         </div>
         <div class="form-group">
             <label for="huis" class="sr-only">Huis:</label>
-            <input type="text" id="huis" name="huis" class="form-control" readonly="Izegem" value="Izegem" required />
+            <input type="text" id="huis" name="huis" class="form-control" readonly value="Izegem" required />
         </div>
         <button type="submit" class="btn btn-primary">Zoeken</button>
     </div>
 </form>
-
-
 
 
 @if (Model.CountIntakes != null && Model.CountIntakeType != null && Model.CountGender != null &&
@@ -526,3 +525,11 @@
         </div>
     </div>
 }
+
+
+
+<script>
+    // JavaScript om het max attribuut in te stellen op het huidige jaar
+    document.getElementById('year').max = new Date().getFullYear();
+</script>
+

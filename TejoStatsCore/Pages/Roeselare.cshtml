@@ -5,14 +5,17 @@
     ViewData["Title"] = "Tejo Roeselare";
 }
 <head>
-    <link rel="stylesheet" href="~/Styles/Tejo.css">
+    <link rel="stylesheet" href="~/Styles/Tejo.css" />
 </head>
 
+<body>
 <div class="text-center">
     <h1 class="display-4">Tejo Roeselare</h1>
     <p>Welkom op de pagina van Tejo Roeselare</p>
     
 </div>
+
+
 
 <form method="get">
     <div class="form-group-container">
@@ -43,7 +46,8 @@
     <h3>Resultaten</h3>
     <div class="table-grid">
         <div class="table-container">
-         <table class="table">
+            <table class="table">
+                <caption>Telt het totale aantal intakes van de voorbije periode</caption>
                 @if (Model.CountIntakes.Rows.Count > 0)
                 {
                     <thead>
@@ -74,7 +78,8 @@
         </div>
 
         <div class="table-container">
-       <table class="table">
+            <table class="table">
+                <caption>Telt het aantal intakes en spontane intakes van de voorbije periode</caption>
                 @if (Model.CountIntakeType.Rows.Count > 0)
                 {
                     <thead>
@@ -105,7 +110,8 @@
         </div>
 
         <div class="table-container">
-          <table class="table">
+            <table class="table">
+                <caption>Aantal jongeren per gender</caption>
                 @if (Model.CountGender.Rows.Count > 0)
                 {
                     <thead>
@@ -137,26 +143,27 @@
 
         <div class="table-container">
             <table class="table">
+                <caption>Aantal jongeren per leeftijdsgroep</caption>
                 @if (Model.CountAge.Rows.Count > 0)
                 {
                     <thead>
-                        <tr>
-                            @foreach (System.Data.DataColumn column in Model.CountAge.Columns)
-                            {
-                                <th>@column.ColumnName</th>
-                            }
-                        </tr>
+                    <tr>
+                        @foreach (System.Data.DataColumn column in Model.CountAge.Columns)
+                        {
+                            <th>@column.ColumnName</th>
+                        }
+                    </tr>
                     </thead>
                     <tbody>
-                        @foreach (System.Data.DataRow row in Model.CountAge.Rows)
-                        {
-                            <tr>
-                                @foreach (var item in row.ItemArray)
-                                {
-                                    <td>@item</td>
-                                }
-                            </tr>
-                        }
+                    @foreach (System.Data.DataRow row in Model.CountAge.Rows)
+                    {
+                        <tr>
+                            @foreach (var item in row.ItemArray)
+                            {
+                                <td>@item</td>
+                            }
+                        </tr>
+                    }
                     </tbody>
                 }
                 else
@@ -168,26 +175,27 @@
 
         <div class="table-container">
             <table class="table">
+                <caption>Aantal jongeren per stad waar ze wonen</caption>
                 @if (Model.CountCity.Rows.Count > 0)
                 {
                     <thead>
-                        <tr>
-                            @foreach (System.Data.DataColumn column in Model.CountCity.Columns)
-                            {
-                                <th>@column.ColumnName</th>
-                            }
-                        </tr>
+                    <tr>
+                        @foreach (System.Data.DataColumn column in Model.CountCity.Columns)
+                        {
+                            <th>@column.ColumnName</th>
+                        }
+                    </tr>
                     </thead>
                     <tbody>
-                        @foreach (System.Data.DataRow row in Model.CountCity.Rows)
-                        {
-                            <tr>
-                                @foreach (var item in row.ItemArray)
-                                {
-                                    <td>@item</td>
-                                }
-                            </tr>
-                        }
+                    @foreach (System.Data.DataRow row in Model.CountCity.Rows)
+                    {
+                        <tr>
+                            @foreach (var item in row.ItemArray)
+                            {
+                                <td>@item</td>
+                            }
+                        </tr>
+                    }
                     </tbody>
                 }
                 else
@@ -199,26 +207,27 @@
 
         <div class="table-container">
             <table class="table">
+                <caption>Aantal jongeren per land van herkomst. Jongeren uit België werden niet opgenomen</caption>
                 @if (Model.CountCountry.Rows.Count > 0)
                 {
                     <thead>
-                        <tr>
-                            @foreach (System.Data.DataColumn column in Model.CountCountry.Columns)
-                            {
-                                <th>@column.ColumnName</th>
-                            }
-                        </tr>
+                    <tr>
+                        @foreach (System.Data.DataColumn column in Model.CountCountry.Columns)
+                        {
+                            <th>@column.ColumnName</th>
+                        }
+                    </tr>
                     </thead>
                     <tbody>
-                        @foreach (System.Data.DataRow row in Model.CountCountry.Rows)
-                        {
-                            <tr>
-                                @foreach (var item in row.ItemArray)
-                                {
-                                    <td>@item</td>
-                                }
-                            </tr>
-                        }
+                    @foreach (System.Data.DataRow row in Model.CountCountry.Rows)
+                    {
+                        <tr>
+                            @foreach (var item in row.ItemArray)
+                            {
+                                <td>@item</td>
+                            }
+                        </tr>
+                    }
                     </tbody>
                 }
                 else
@@ -229,50 +238,52 @@
         </div>
 
          <div class="table-container">
-         <table class="table">
-                @if (Model.CountDoorverwijzer.Rows.Count > 0)
-                {
-                    <thead>
-                    <tr>
-                            @foreach (System.Data.DataColumn column in Model.CountDoorverwijzer.Columns)
-                        {
-                            <th>@column.ColumnName</th>
-                        }
-                    </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (System.Data.DataRow row in Model.CountDoorverwijzer.Rows)
-                    {
-                        <tr>
-                            @foreach (var item in row.ItemArray)
-                            {
-                                <td>@item</td>
-                            }
-                        </tr>
-                    }
-                    </tbody>
-                }
-                else
-                {
-                    <tr><td>Geen resultaten gevonden.</td></tr>
-                }
-            </table>
+             <table class="table">
+                 <caption>Wie verwees de jongere door naar Tejo</caption>
+                 @if (Model.CountDoorverwijzer.Rows.Count > 0)
+                 {
+                     <thead>
+                     <tr>
+                         @foreach (System.Data.DataColumn column in Model.CountDoorverwijzer.Columns)
+                         {
+                             <th>@column.ColumnName</th>
+                         }
+                     </tr>
+                     </thead>
+                     <tbody>
+                     @foreach (System.Data.DataRow row in Model.CountDoorverwijzer.Rows)
+                     {
+                         <tr>
+                             @foreach (var item in row.ItemArray)
+                             {
+                                 <td>@item</td>
+                             }
+                         </tr>
+                     }
+                     </tbody>
+                 }
+                 else
+                 {
+                     <tr><td>Geen resultaten gevonden.</td></tr>
+                 }
+             </table>
         </div>
 
         <div class="table-container">
-       <table class="table">
+            <table class="table">
+                <caption>Als de sessies afgerond zijn, werd de jongere al dan niet doorverwezen</caption>
                 @if (Model.CountDooverwezen.Rows.Count > 0)
                 {
                     <thead>
                     <tr>
-                            @foreach (System.Data.DataColumn column in Model.CountDooverwezen.Columns)
+                        @foreach (System.Data.DataColumn column in Model.CountDooverwezen.Columns)
                         {
                             <th>@column.ColumnName</th>
                         }
                     </tr>
                     </thead>
                     <tbody>
-                        @foreach (System.Data.DataRow row in Model.CountDooverwezen.Rows)
+                    @foreach (System.Data.DataRow row in Model.CountDooverwezen.Rows)
                     {
                         <tr>
                             @foreach (var item in row.ItemArray)
@@ -291,19 +302,20 @@
         </div>
 
         <div class="table-container">
-          <table class="table">
+            <table class="table">
+                <caption>Met welke problematieken komen jongeren tot bij ons</caption>
                 @if (Model.CountProblems.Rows.Count > 0)
                 {
                     <thead>
                     <tr>
-                            @foreach (System.Data.DataColumn column in Model.CountProblems.Columns)
+                        @foreach (System.Data.DataColumn column in Model.CountProblems.Columns)
                         {
                             <th>@column.ColumnName</th>
                         }
                     </tr>
                     </thead>
                     <tbody>
-                        @foreach (System.Data.DataRow row in Model.CountProblems.Rows)
+                    @foreach (System.Data.DataRow row in Model.CountProblems.Rows)
                     {
                         <tr>
                             @foreach (var item in row.ItemArray)
@@ -323,26 +335,27 @@
 
         <div class="table-container">
             <table class="table">
+                <caption>Naar welke schoolrichting gaan de jongeren, of werken ze reeds</caption>
                 @if (Model.CountSchoolWerk.Rows.Count > 0)
                 {
                     <thead>
-                        <tr>
-                            @foreach (System.Data.DataColumn column in Model.CountSchoolWerk.Columns)
-                            {
-                                <th>@column.ColumnName</th>
-                            }
-                        </tr>
+                    <tr>
+                        @foreach (System.Data.DataColumn column in Model.CountSchoolWerk.Columns)
+                        {
+                            <th>@column.ColumnName</th>
+                        }
+                    </tr>
                     </thead>
                     <tbody>
-                        @foreach (System.Data.DataRow row in Model.CountSchoolWerk.Rows)
-                        {
-                            <tr>
-                                @foreach (var item in row.ItemArray)
-                                {
-                                    <td>@item</td>
-                                }
-                            </tr>
-                        }
+                    @foreach (System.Data.DataRow row in Model.CountSchoolWerk.Rows)
+                    {
+                        <tr>
+                            @foreach (var item in row.ItemArray)
+                            {
+                                <td>@item</td>
+                            }
+                        </tr>
+                    }
                     </tbody>
                 }
                 else
@@ -354,26 +367,27 @@
 
         <div class="table-container">
             <table class="table">
+                <caption>Wat is de woonsituatie van de jongeren</caption>
                 @if (Model.CountWoon.Rows.Count > 0)
                 {
                     <thead>
-                        <tr>
-                            @foreach (System.Data.DataColumn column in Model.CountWoon.Columns)
-                            {
-                                <th>@column.ColumnName</th>
-                            }
-                        </tr>
+                    <tr>
+                        @foreach (System.Data.DataColumn column in Model.CountWoon.Columns)
+                        {
+                            <th>@column.ColumnName</th>
+                        }
+                    </tr>
                     </thead>
                     <tbody>
-                        @foreach (System.Data.DataRow row in Model.CountWoon.Rows)
-                        {
-                            <tr>
-                                @foreach (var item in row.ItemArray)
-                                {
-                                    <td>@item</td>
-                                }
-                            </tr>
-                        }
+                    @foreach (System.Data.DataRow row in Model.CountWoon.Rows)
+                    {
+                        <tr>
+                            @foreach (var item in row.ItemArray)
+                            {
+                                <td>@item</td>
+                            }
+                        </tr>
+                    }
                     </tbody>
                 }
                 else
@@ -385,26 +399,27 @@
 
         <div class="table-container">
             <table class="table">
+                <caption>Hoeveel Jongeren kwamen er langs per therapeut</caption>
                 @if (Model.CountTherapeut.Rows.Count > 0)
                 {
                     <thead>
-                        <tr>
-                            @foreach (System.Data.DataColumn column in Model.CountTherapeut.Columns)
-                            {
-                                <th>@column.ColumnName</th>
-                            }
-                        </tr>
+                    <tr>
+                        @foreach (System.Data.DataColumn column in Model.CountTherapeut.Columns)
+                        {
+                            <th>@column.ColumnName</th>
+                        }
+                    </tr>
                     </thead>
                     <tbody>
-                        @foreach (System.Data.DataRow row in Model.CountTherapeut.Rows)
-                        {
-                            <tr>
-                                @foreach (var item in row.ItemArray)
-                                {
-                                    <td>@item</td>
-                                }
-                            </tr>
-                        }
+                    @foreach (System.Data.DataRow row in Model.CountTherapeut.Rows)
+                    {
+                        <tr>
+                            @foreach (var item in row.ItemArray)
+                            {
+                                <td>@item</td>
+                            }
+                        </tr>
+                    }
                     </tbody>
                 }
                 else
@@ -416,26 +431,27 @@
 
         <div class="table-container">
             <table class="table">
+                <caption>Het aantal (gegroepeerde) aanwezige sessies van de jongere</caption>
                 @if (Model.CountAanwezig.Rows.Count > 0)
                 {
                     <thead>
-                        <tr>
-                            @foreach (System.Data.DataColumn column in Model.CountAanwezig.Columns)
-                            {
-                                <th>@column.ColumnName</th>
-                            }
-                        </tr>
+                    <tr>
+                        @foreach (System.Data.DataColumn column in Model.CountAanwezig.Columns)
+                        {
+                            <th>@column.ColumnName</th>
+                        }
+                    </tr>
                     </thead>
                     <tbody>
-                        @foreach (System.Data.DataRow row in Model.CountAanwezig.Rows)
-                        {
-                            <tr>
-                                @foreach (var item in row.ItemArray)
-                                {
-                                    <td>@item</td>
-                                }
-                            </tr>
-                        }
+                    @foreach (System.Data.DataRow row in Model.CountAanwezig.Rows)
+                    {
+                        <tr>
+                            @foreach (var item in row.ItemArray)
+                            {
+                                <td>@item</td>
+                            }
+                        </tr>
+                    }
                     </tbody>
                 }
                 else
@@ -447,26 +463,27 @@
 
         <div class="table-container">
             <table class="table">
+                <caption>Het aantal afwezige sessies van de jongere</caption>
                 @if (Model.CountAfwezig.Rows.Count > 0)
                 {
                     <thead>
-                        <tr>
-                            @foreach (System.Data.DataColumn column in Model.CountAfwezig.Columns)
-                            {
-                                <th>@column.ColumnName</th>
-                            }
-                        </tr>
+                    <tr>
+                        @foreach (System.Data.DataColumn column in Model.CountAfwezig.Columns)
+                        {
+                            <th>@column.ColumnName</th>
+                        }
+                    </tr>
                     </thead>
                     <tbody>
-                        @foreach (System.Data.DataRow row in Model.CountAfwezig.Rows)
-                        {
-                            <tr>
-                                @foreach (var item in row.ItemArray)
-                                {
-                                    <td>@item</td>
-                                }
-                            </tr>
-                        }
+                    @foreach (System.Data.DataRow row in Model.CountAfwezig.Rows)
+                    {
+                        <tr>
+                            @foreach (var item in row.ItemArray)
+                            {
+                                <td>@item</td>
+                            }
+                        </tr>
+                    }
                     </tbody>
                 }
                 else
@@ -478,26 +495,27 @@
 
         <div class="table-container">
             <table class="table">
+                <caption>Het gemiddelde aantal sessies en gemiddeld aantal weken van de voorbij periode</caption>
                 @if (Model.CountGemiddlede.Rows.Count > 0)
                 {
                     <thead>
-                        <tr>
-                            @foreach (System.Data.DataColumn column in Model.CountGemiddlede.Columns)
-                            {
-                                <th>@column.ColumnName</th>
-                            }
-                        </tr>
+                    <tr>
+                        @foreach (System.Data.DataColumn column in Model.CountGemiddlede.Columns)
+                        {
+                            <th>@column.ColumnName</th>
+                        }
+                    </tr>
                     </thead>
                     <tbody>
-                        @foreach (System.Data.DataRow row in Model.CountGemiddlede.Rows)
-                        {
-                            <tr>
-                                @foreach (var item in row.ItemArray)
-                                {
-                                    <td>@item</td>
-                                }
-                            </tr>
-                        }
+                    @foreach (System.Data.DataRow row in Model.CountGemiddlede.Rows)
+                    {
+                        <tr>
+                            @foreach (var item in row.ItemArray)
+                            {
+                                <td>@item</td>
+                            }
+                        </tr>
+                    }
                     </tbody>
                 }
                 else
@@ -508,3 +526,5 @@
         </div>
         </div>
 }
+
+</body>

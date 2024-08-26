@@ -1,6 +1,6 @@
 ﻿.table-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Drie kolommen van gelijke breedte */
+    grid-template-columns: repeat(3, 1fr); /* Drie kolommen van gelijke breedte */
     gap: 10px; /* Ruimte tussen de tabellen */
     margin-top: 20px;
 }

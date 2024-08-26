@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TejoStatsCore.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Styles/Tejo.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
 </head>
 <body>
 <header>
@@ -26,7 +29,9 @@
                     <select id="tejoRoeselare" class="form-control" onchange="navigateToRoeselare()">
                         <option value="">Selecteer een pagina</option>
                         <option value="/Roeselare">Bekijk gegevens tussen 2 datums</option>
+                        <option value="/PerJaar8800">Bekijk gegevens per kalenderjaar</option>
                         <option value="/Irregular8800">Controleer op onregelmatigheden</option>
+                        
                         <!-- Voeg hier meer opties toe als je meer pagina's hebt -->
                     </select>
                 </div>
@@ -35,9 +40,13 @@
                     <select id="tejoIzegem" class="form-control" onchange="navigateToIzegem()">
                         <option value="">Selecteer een pagina</option>
                         <option value="/Izegem">Bekijk gegevens tussen 2 datums</option>
+                        <option value="/PerJaar8870">Bekijk gegevens per kalenderjaar</option>
+                        <option value="/Irregular8870">Controleer op onregelmatigheden</option>
                         <!-- Voeg hier meer opties toe als je meer pagina's hebt -->
                     </select>
                 </div>
+                        <button id="download-pdf">Opslaan als PDF</button>
+
             </div>
         </div>
         </div>
@@ -77,6 +86,38 @@
         }
     </script>
 
-    @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        document.getElementById("download-pdf").addEventListener("click", function () {
+            const { jsPDF } = window.jspdf;
+
+            html2canvas(document.body, {
+                onrendered: function (canvas) {
+                    var imgData = canvas.toDataURL('image/png');
+                    var pdf = new jsPDF('p', 'mm', 'a4');
+                    var imgWidth = 210; // A4 width in mm
+                    var pageHeight = 297; // A4 height in mm
+                    var imgHeight = canvas.height * imgWidth / canvas.width;
+                    var heightLeft = imgHeight;
+
+                    var position = 0;
+
+                    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+
+                    while (heightLeft >= 0) {
+                        position = heightLeft - imgHeight;
+                        pdf.addPage();
+                        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                        heightLeft -= pageHeight;
+                    }
+
+                    pdf.save("pagina.pdf");
+                }
+            });
+        });
+    </script>
+
+
+@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
