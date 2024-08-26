@@ -7,6 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Styles\TejoIrregular.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Styles\TejoIrregular.css" />
+    <None Include="wwwroot\Styles\Tejo.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Queries\Queries.csproj" />
   </ItemGroup>
 

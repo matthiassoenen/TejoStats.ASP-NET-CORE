@@ -1,0 +1,65 @@
+﻿.table-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Drie kolommen van gelijke breedte */
+    gap: 10px; /* Ruimte tussen de tabellen */
+    margin-top: 20px;
+}
+
+.table-container {
+    border: 1px solid #ddd; /* Optionele rand voor de tabellen */
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+
+.table th {
+    background-color: #D3D3D3;
+}
+
+.form-group-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-group {
+    margin-right: 10px; /* Optioneel: Voegt wat ruimte tussen de velden toe */
+}
+
+    .form-group:last-child {
+        margin-right: 0; /* Verwijdert de marge voor het laatste element in de rij */
+    }
+/* wwwroot/Styles/Tejo.css */
+.dropdown-container {
+    display: flex;
+    justify-content: space-between; /* Zorgt ervoor dat de dropdowns aan weerszijden uitgelijnd zijn */
+    gap: 20px; /* Optioneel: Ruimte tussen de dropdowns */
+}
+
+.dropdown {
+    flex: 1; /* Zorgt ervoor dat de dropdowns evenveel ruimte krijgen */
+}
+
+.dropdown select {
+    width: 100%; /* Zorgt ervoor dat de dropdowns de beschikbare ruimte benutten */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+body {
+}

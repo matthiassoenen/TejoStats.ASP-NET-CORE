@@ -1,0 +1,190 @@
+﻿@page
+@model TejoStatsCore.Pages.Irregular8800Model
+@{
+    ViewData["Title"] = "Onregelmatigheden in planningstool";
+}
+<head>
+    <link rel="stylesheet" href="~/Styles/TejoIrregular.css">
+</head>
+
+<form method="get">
+    <div class="form-group-container">
+        <div class="form-group">
+            <label for="startDate">Startdatum:</label>
+            <input type="date" id="startDate" name="startDateValue" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label for="endDate">Einddatum:</label>
+            <input type="date" id="endDate" name="endDateValue" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label for="huis" class="sr-only">Huis:</label>
+            <input type="text" id="huis" name="huis" class="form-control" readonly="readonly" value="Roeselare" required/>
+        </div>
+        <button type="submit" class="btn btn-primary">Zoeken</button>
+    </div>
+</form>
+
+
+@if (Model.CountMissingFiles != null && Model.NoProblems != null)
+{
+    <h3>Resultaten</h3>
+    <div class="table-grid">
+        <div class="table-container">
+            <table class="table">
+                @if (Model.CountMissingFiles.Rows.Count > 0)
+                {
+                    <thead>
+                    <tr>
+                        @foreach (System.Data.DataColumn column in Model.CountMissingFiles.Columns)
+                        {
+                            <th>@column.ColumnName</th>
+                        }
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (System.Data.DataRow row in Model.CountMissingFiles.Rows)
+                    {
+                        <tr>
+                            @foreach (var item in row.ItemArray)
+                            {
+                                <td>@item</td>
+                            }
+                        </tr>
+                    }
+                    </tbody>
+                }
+                else
+                {
+                    <tr><td>Geen resultaten gevonden.</td></tr>
+                }
+            </table>
+        </div>
+        
+        <div class="table-container">
+            <table class="table">
+                @if (Model.NoProblems.Rows.Count > 0)
+                {
+                    <thead>
+                    <tr>
+                        @foreach (System.Data.DataColumn column in Model.NoProblems.Columns)
+                        {
+                            <th>@column.ColumnName</th>
+                        }
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (System.Data.DataRow row in Model.NoProblems.Rows)
+                    {
+                        <tr>
+                            @foreach (var item in row.ItemArray)
+                            {
+                                <td>@item</td>
+                            }
+                        </tr>
+                    }
+                    </tbody>
+                }
+                else
+                {
+                    <tr><td>Geen resultaten gevonden.</td></tr>
+                }
+            </table>
+        </div>
+
+        
+        <div class="table-container">
+            <table class="table">
+                @if (Model.NoDoorverwezen.Rows.Count > 0)
+                {
+                    <thead>
+                    <tr>
+                        @foreach (System.Data.DataColumn column in Model.NoDoorverwezen.Columns)
+                        {
+                            <th>@column.ColumnName</th>
+                        }
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (System.Data.DataRow row in Model.NoDoorverwezen.Rows)
+                    {
+                        <tr>
+                            @foreach (var item in row.ItemArray)
+                            {
+                                <td>@item</td>
+                            }
+                        </tr>
+                    }
+                    </tbody>
+                }
+                else
+                {
+                    <tr><td>Geen resultaten gevonden.</td></tr>
+                }
+            </table>
+        </div>
+        
+        <div class="table-container">
+            <table class="table">
+                @if (Model.WrongRegistration.Rows.Count > 0)
+                {
+                    <thead>
+                    <tr>
+                        @foreach (System.Data.DataColumn column in Model.WrongRegistration.Columns)
+                        {
+                            <th>@column.ColumnName</th>
+                        }
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (System.Data.DataRow row in Model.WrongRegistration.Rows)
+                    {
+                        <tr>
+                            @foreach (var item in row.ItemArray)
+                            {
+                                <td>@item</td>
+                            }
+                        </tr>
+                    }
+                    </tbody>
+                }
+                else
+                {
+                    <tr><td>Geen resultaten gevonden.</td></tr>
+                }
+            </table>
+        </div>
+
+        <div class="table-container">
+            <table class="table">
+                @if (Model.CountWrongRegistration.Rows.Count > 0)
+                {
+                    <thead>
+                        <tr>
+                            @foreach (System.Data.DataColumn column in Model.CountWrongRegistration.Columns)
+                            {
+                                <th>@column.ColumnName</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (System.Data.DataRow row in Model.CountWrongRegistration.Rows)
+                        {
+                            <tr>
+                                @foreach (var item in row.ItemArray)
+                                {
+                                    <td>@item</td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                }
+                else
+                {
+                    <tr><td>Geen resultaten gevonden.</td></tr>
+                }
+            </table>
+        </div>
+    </div>
+}
+

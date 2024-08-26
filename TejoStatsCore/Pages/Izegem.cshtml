@@ -1,17 +1,19 @@
-﻿
-@page
-@model TejoStatsCore.Pages.RoeselareModel
+﻿@page
+@model TejoStatsCore.Pages.IzegemModel
 @{
-    ViewData["Title"] = "Tejo Roeselare";
+    ViewData["Title"] = "Tejo Izegem";
 }
+
+
 <head>
     <link rel="stylesheet" href="~/Styles/Tejo.css">
+
 </head>
 
 <div class="text-center">
-    <h1 class="display-4">Tejo Roeselare</h1>
-    <p>Welkom op de pagina van Tejo Roeselare</p>
-    
+    <h1 class="display-4">Tejo Izegem</h1>
+    <p>Welkom op de pagina van Tejo Izegem</p>
+
 </div>
 
 <form method="get">
@@ -26,7 +28,7 @@
         </div>
         <div class="form-group">
             <label for="huis" class="sr-only">Huis:</label>
-            <input type="text" id="huis" name="huis" class="form-control" readonly="Roeselare" value="Roeselare" required />
+            <input type="text" id="huis" name="huis" class="form-control" readonly="Izegem" value="Izegem" required />
         </div>
         <button type="submit" class="btn btn-primary">Zoeken</button>
     </div>
@@ -34,36 +36,36 @@
 
 
 
-@if (Model.CountIntakes != null && Model.CountIntakeType != null && Model.CountGender != null && 
-        Model.CountAge != null && Model.CountCity != null && Model.CountCountry != null &&
-            Model.CountDoorverwijzer != null && Model.CountDooverwezen != null && Model.CountProblems != null &&
-                Model.CountSchoolWerk != null && Model.CountWoon != null && Model.CountTherapeut != null &&
-                    Model.CountAanwezig != null && Model.CountAfwezig != null && Model.CountGemiddlede != null)
+@if (Model.CountIntakes != null && Model.CountIntakeType != null && Model.CountGender != null &&
+       Model.CountAge != null && Model.CountCity != null && Model.CountCountry != null &&
+           Model.CountDoorverwijzer != null && Model.CountDooverwezen != null && Model.CountProblems != null &&
+               Model.CountSchoolWerk != null && Model.CountWoon != null && Model.CountTherapeut != null &&
+                   Model.CountAanwezig != null && Model.CountAfwezig != null && Model.CountGemiddlede != null)
 {
     <h3>Resultaten</h3>
     <div class="table-grid">
         <div class="table-container">
-         <table class="table">
+            <table class="table">
                 @if (Model.CountIntakes.Rows.Count > 0)
                 {
                     <thead>
-                    <tr>
-                        @foreach (System.Data.DataColumn column in Model.CountIntakes.Columns)
-                        {
-                            <th>@column.ColumnName</th>
-                        }
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach (System.Data.DataRow row in Model.CountIntakes.Rows)
-                    {
                         <tr>
-                            @foreach (var item in row.ItemArray)
+                            @foreach (System.Data.DataColumn column in Model.CountIntakes.Columns)
                             {
-                                <td>@item</td>
+                                <th>@column.ColumnName</th>
                             }
                         </tr>
-                    }
+                    </thead>
+                    <tbody>
+                        @foreach (System.Data.DataRow row in Model.CountIntakes.Rows)
+                        {
+                            <tr>
+                                @foreach (var item in row.ItemArray)
+                                {
+                                    <td>@item</td>
+                                }
+                            </tr>
+                        }
                     </tbody>
                 }
                 else
@@ -74,27 +76,27 @@
         </div>
 
         <div class="table-container">
-       <table class="table">
+            <table class="table">
                 @if (Model.CountIntakeType.Rows.Count > 0)
                 {
                     <thead>
-                    <tr>
-                        @foreach (System.Data.DataColumn column in Model.CountIntakeType.Columns)
-                        {
-                            <th>@column.ColumnName</th>
-                        }
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach (System.Data.DataRow row in Model.CountIntakeType.Rows)
-                    {
                         <tr>
-                            @foreach (var item in row.ItemArray)
+                            @foreach (System.Data.DataColumn column in Model.CountIntakeType.Columns)
                             {
-                                <td>@item</td>
+                                <th>@column.ColumnName</th>
                             }
                         </tr>
-                    }
+                    </thead>
+                    <tbody>
+                        @foreach (System.Data.DataRow row in Model.CountIntakeType.Rows)
+                        {
+                            <tr>
+                                @foreach (var item in row.ItemArray)
+                                {
+                                    <td>@item</td>
+                                }
+                            </tr>
+                        }
                     </tbody>
                 }
                 else
@@ -105,27 +107,27 @@
         </div>
 
         <div class="table-container">
-          <table class="table">
+            <table class="table">
                 @if (Model.CountGender.Rows.Count > 0)
                 {
                     <thead>
-                    <tr>
-                        @foreach (System.Data.DataColumn column in Model.CountGender.Columns)
-                        {
-                            <th>@column.ColumnName</th>
-                        }
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach (System.Data.DataRow row in Model.CountGender.Rows)
-                    {
                         <tr>
-                            @foreach (var item in row.ItemArray)
+                            @foreach (System.Data.DataColumn column in Model.CountGender.Columns)
                             {
-                                <td>@item</td>
+                                <th>@column.ColumnName</th>
                             }
                         </tr>
-                    }
+                    </thead>
+                    <tbody>
+                        @foreach (System.Data.DataRow row in Model.CountGender.Rows)
+                        {
+                            <tr>
+                                @foreach (var item in row.ItemArray)
+                                {
+                                    <td>@item</td>
+                                }
+                            </tr>
+                        }
                     </tbody>
                 }
                 else
@@ -228,28 +230,28 @@
             </table>
         </div>
 
-         <div class="table-container">
-         <table class="table">
+        <div class="table-container">
+            <table class="table">
                 @if (Model.CountDoorverwijzer.Rows.Count > 0)
                 {
                     <thead>
-                    <tr>
+                        <tr>
                             @foreach (System.Data.DataColumn column in Model.CountDoorverwijzer.Columns)
-                        {
-                            <th>@column.ColumnName</th>
-                        }
-                    </tr>
+                            {
+                                <th>@column.ColumnName</th>
+                            }
+                        </tr>
                     </thead>
                     <tbody>
                         @foreach (System.Data.DataRow row in Model.CountDoorverwijzer.Rows)
-                    {
-                        <tr>
-                            @foreach (var item in row.ItemArray)
-                            {
-                                <td>@item</td>
-                            }
-                        </tr>
-                    }
+                        {
+                            <tr>
+                                @foreach (var item in row.ItemArray)
+                                {
+                                    <td>@item</td>
+                                }
+                            </tr>
+                        }
                     </tbody>
                 }
                 else
@@ -260,27 +262,27 @@
         </div>
 
         <div class="table-container">
-       <table class="table">
+            <table class="table">
                 @if (Model.CountDooverwezen.Rows.Count > 0)
                 {
                     <thead>
-                    <tr>
+                        <tr>
                             @foreach (System.Data.DataColumn column in Model.CountDooverwezen.Columns)
-                        {
-                            <th>@column.ColumnName</th>
-                        }
-                    </tr>
+                            {
+                                <th>@column.ColumnName</th>
+                            }
+                        </tr>
                     </thead>
                     <tbody>
                         @foreach (System.Data.DataRow row in Model.CountDooverwezen.Rows)
-                    {
-                        <tr>
-                            @foreach (var item in row.ItemArray)
-                            {
-                                <td>@item</td>
-                            }
-                        </tr>
-                    }
+                        {
+                            <tr>
+                                @foreach (var item in row.ItemArray)
+                                {
+                                    <td>@item</td>
+                                }
+                            </tr>
+                        }
                     </tbody>
                 }
                 else
@@ -291,27 +293,27 @@
         </div>
 
         <div class="table-container">
-          <table class="table">
+            <table class="table">
                 @if (Model.CountProblems.Rows.Count > 0)
                 {
                     <thead>
-                    <tr>
+                        <tr>
                             @foreach (System.Data.DataColumn column in Model.CountProblems.Columns)
-                        {
-                            <th>@column.ColumnName</th>
-                        }
-                    </tr>
+                            {
+                                <th>@column.ColumnName</th>
+                            }
+                        </tr>
                     </thead>
                     <tbody>
                         @foreach (System.Data.DataRow row in Model.CountProblems.Rows)
-                    {
-                        <tr>
-                            @foreach (var item in row.ItemArray)
-                            {
-                                <td>@item</td>
-                            }
-                        </tr>
-                    }
+                        {
+                            <tr>
+                                @foreach (var item in row.ItemArray)
+                                {
+                                    <td>@item</td>
+                                }
+                            </tr>
+                        }
                     </tbody>
                 }
                 else
@@ -506,5 +508,5 @@
                 }
             </table>
         </div>
-        </div>
+    </div>
 }
