@@ -55,6 +55,9 @@
 .dropdown select {
     width: 100%; /* Zorgt ervoor dat de dropdowns de beschikbare ruimte benutten */
 }
+select.form-control {
+    margin-left: 10px; /* Voeg wat ruimte toe tussen het label en de select */
+}
 
 label {
     display: block;
@@ -80,5 +83,14 @@ th {
     background-color: #4CAF50;
     color: white;
 }
-body {
+.navbar-collapse {
+    display: flex;
+    align-items: center; /* Verticaal uitlijnen van de elementen */
+    justify-content: space-between; /* Verdeelt ruimte tussen de elementen */
+    padding: 10px 20px; /* Voeg ruimte toe aan de bovenkant, onderkant, links en rechts */
+    background-color: #e03726;
+    border-radius: 5px;
 }
+
+
+

@@ -7,14 +7,13 @@
     <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/TejoStatsCore.styles.css" asp-append-version="true" />
-    <<link rel="stylesheet" href="~/Styles/Tejo.css">
+   <<link rel="stylesheet" href="~/Styles/Tejo.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 
 </head>
 <body>
-<header>
+<header class="header1">
     
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container">
@@ -49,6 +48,7 @@
                     <label for="beide">Tejo Roeselare & Izegem:</label>
                     <select id="BeideTejo" class="form-control" onchange="navigateToBeide()">
                         <option value="">Selecteer een pagina</option>
+                        <option value="/Compare">Bekijk de gegevens tussen 2 datums per Tejohuis</option>
                         
                         <!-- Voeg hier meer opties toe als je meer pagina's hebt -->
                     </select>
