@@ -1,0 +1,104 @@
+﻿.navbar {
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0c3f7c;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.navbar .dropdown:first-child {
+    margin-bottom: 20px; /* Zorgt voor wat ruimte onder de dropdown */
+}
+
+.navbar-brand {
+    margin-bottom: 20px;
+}
+
+.dropdown-container {
+    display: block;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dropdown label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.dropdown select {
+    width: 100%;
+    padding: 5px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+    .dropdown::before {
+        content: url('https://cdn-assets-cloud.frontify.com/s3/frontify-cloud-files-us/eyJwYXRoIjoiZnJvbnRpZnlcL2ZpbGVcL1pjeWNvQnlqcVY4ckdma0twOFdhLnBuZyJ9:frontify:0rEh4h2Tsqi9AymrniHdbHv7U1nlKG6wJKYN3OOg1JM?width={width}&rect=0,0,800,523.99975609756&reference_width=800'); /* Voeg hier het pad naar je icoon toe */
+        position: absolute;
+        left: -25px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+    }
+
+.download-button {
+    align-self: flex-end; /* Plaatst de knop onderaan de navbar */
+    margin-top: auto; /* Zorgt ervoor dat de knop naar beneden wordt geduwd */
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#download-pdf:hover {
+    background-color: #0056b3;
+}
+
+/* Basis reset om ervoor te zorgen dat de body en html de volledige hoogte gebruiken */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.content {
+    margin-left: 300px; /* Ruimte voor de vaste navbar */
+    padding: 20px;
+}
+
+/* Stijl voor de labels */
+.tejo {
+    font-size: 18px; /* Maakt het label iets groter */
+    font-weight: bold; /* Maakt het label vet */
+    color: #e03726; /* Verandert de kleur van het label, vervang #007bff door de kleur die je wilt gebruiken */
+    margin-bottom: 10px; /* Zorgt voor wat ruimte onder het label */
+    margin-top: 10px;
+    display: block; /* Zorgt ervoor dat het label boven de dropdown staat */
+}
+
+#index-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/Images/Tejo_logo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: -1; /* Zorgt ervoor dat de afbeelding achter de content blijft */
+}
+
+

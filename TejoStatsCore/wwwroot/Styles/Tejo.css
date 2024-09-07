@@ -17,17 +17,17 @@
     border-collapse: collapse;
 }
 
-.table th, .table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
+    .table th, .table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
 
 
-.table th {
-    background-color: #D3D3D3;
-}
-
+    .table th {
+        background-color: #D3D3D3;
+    }
+/*
 .form-group-container {
     display: flex;
     justify-content: space-between;
@@ -35,26 +35,14 @@
 }
 
 .form-group {
-    margin-right: 10px; /* Optioneel: Voegt wat ruimte tussen de velden toe */
+    margin-right: 10px; 
 }
 
     .form-group:last-child {
-        margin-right: 0; /* Verwijdert de marge voor het laatste element in de rij */
+        margin-right: 0; 
     }
+*/
 /* wwwroot/Styles/Tejo.css */
-.dropdown-container {
-    display: flex;
-    justify-content: space-between; /* Zorgt ervoor dat de dropdowns aan weerszijden uitgelijnd zijn */
-    gap: 20px; /* Optioneel: Ruimte tussen de dropdowns */
-}
-
-.dropdown {
-    flex: 1; /* Zorgt ervoor dat de dropdowns evenveel ruimte krijgen */
-}
-
-.dropdown select {
-    width: 100%; /* Zorgt ervoor dat de dropdowns de beschikbare ruimte benutten */
-}
 select.form-control {
     margin-left: 10px; /* Voeg wat ruimte toe tussen het label en de select */
 }
@@ -63,6 +51,7 @@ label {
     display: block;
     margin-bottom: 5px;
 }
+
 .tablehead {
     border-collapse: collapse;
     width: 100%;
@@ -76,21 +65,16 @@ label {
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
-     
 }
 
 th {
     background-color: #4CAF50;
     color: white;
 }
-.navbar-collapse {
-    display: flex;
-    align-items: center; /* Verticaal uitlijnen van de elementen */
-    justify-content: space-between; /* Verdeelt ruimte tussen de elementen */
-    padding: 10px 20px; /* Voeg ruimte toe aan de bovenkant, onderkant, links en rechts */
-    background-color: #e03726;
-    border-radius: 5px;
+
+
+/* Zorg ervoor dat de inhoud naast de navbar begint */
+.content {
+    margin-left: 250px; /* Ruimte voor de vaste navbar */
+    padding: 20px;
 }
-
-
-

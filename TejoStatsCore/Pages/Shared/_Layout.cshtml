@@ -7,58 +7,50 @@
     <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-   <<link rel="stylesheet" href="~/Styles/Tejo.css">
+    <link rel ="stylesheet" href="~/Styles/MainPage.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 
 </head>
 <body>
 <header class="header1">
-    
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container">
-        <a class="navbar-brand" asp-area="" asp-page="/Index">TejoStatsCore</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+
+        <nav class="navbar">
+            <a class="navbar-brand" asp-area="" asp-page="/Index">TejoStatsCore</a>
+
             <div class="dropdown-container">
-                <div class="dropdown">
-                    <label for="tejoRoeselare">Tejo Roeselare:</label>
+                
+                    <label class="tejo" for="tejoRoeselare">Tejo Roeselare:</label>
                     <select id="tejoRoeselare" class="form-control" onchange="navigateToRoeselare()">
                         <option value="">Selecteer een pagina</option>
                         <option value="/Roeselare">Bekijk gegevens tussen 2 datums</option>
                         <option value="/PerJaar8800">Bekijk gegevens per kalenderjaar</option>
                         <option value="/Irregular8800">Controleer op onregelmatigheden</option>
-                        
-                        <!-- Voeg hier meer opties toe als je meer pagina's hebt -->
                     </select>
-                </div>
-                <div class="dropdown">
-                    <label for="tejoIzegem">Tejo Izegem:</label>
+            </div>
+
+                <div class="dropdown-container">
+                    <label class="tejo" for="tejoIzegem">Tejo Izegem:</label>
                     <select id="tejoIzegem" class="form-control" onchange="navigateToIzegem()">
                         <option value="">Selecteer een pagina</option>
                         <option value="/Izegem">Bekijk gegevens tussen 2 datums</option>
                         <option value="/PerJaar8870">Bekijk gegevens per kalenderjaar</option>
                         <option value="/Irregular8870">Controleer op onregelmatigheden</option>
-                        <!-- Voeg hier meer opties toe als je meer pagina's hebt -->
                     </select>
-                </div><div class="dropdown">
-                    <label for="beide">Tejo Roeselare & Izegem:</label>
+                </div>
+
+                <div class="dropdown-container">
+                    <label class="tejo" for="beide">Tejo Roeselare & Izegem:</label>
                     <select id="BeideTejo" class="form-control" onchange="navigateToBeide()">
                         <option value="">Selecteer een pagina</option>
                         <option value="/Compare">Bekijk de gegevens tussen 2 datums per Tejohuis</option>
-                        
-                        <!-- Voeg hier meer opties toe als je meer pagina's hebt -->
                     </select>
                 </div>
-                        <button id="download-pdf">Opslaan als PDF</button>
 
-            </div>
-        </div>
-        </div>
-    </nav>
+                <button id="download-pdf" class="download-button">Opslaan als PDF</button>
+            
+        </nav>
+
 </header>
 
     <div class="container">
